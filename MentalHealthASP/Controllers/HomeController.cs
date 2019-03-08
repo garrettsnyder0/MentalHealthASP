@@ -13,5 +13,20 @@ namespace MentalHealthASP.Controllers
         {
             return View();
         }
+
+        public ActionResult DepressionTest()
+        {
+            return View();
+        }
+
+        public ActionResult AnxietyTest()
+        {
+            return View();
+        }
+
+        public ActionResult History()
+        {
+            return View();
+        }
     }
 }

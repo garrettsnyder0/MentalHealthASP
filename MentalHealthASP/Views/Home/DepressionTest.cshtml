@@ -1,0 +1,124 @@
+﻿@model MentalHealthASP.Models.DepressionTest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DepressionTest</title>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>@Html.ActionLink("Home", "Index")</th>
+            <th>@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
+            <th>@Html.ActionLink("Depression Test", "DepressionTest")</th>
+            <th>@Html.ActionLink("History", "History")</th>
+
+        </tr>
+    </table>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <div class="form-group">
+            <label>1. Little interest or no pleasure in doing things</label> <br />
+            @Html.DropDownListFor(x => x.question1, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new {@class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>2. Feeling down, depressed, or hopeless</label> <br />
+            @Html.DropDownListFor(x => x.question2, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>3. Trouble falling or staying asleep, or sleeping to much</label> <br />
+            @Html.DropDownListFor(x => x.question3, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>4. Feeling tired or having little energy</label><br />
+            @Html.DropDownListFor(x => x.question4, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div><br />
+        <div class="form-group">
+            <label>5. Poor appetite or overeating</label> <br />
+            @Html.DropDownListFor(x => x.question5, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>6. Feeling bad about yourself or that you are a failure or have let yourself or family down</label> <br />
+            @Html.DropDownListFor(x => x.question6, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>7. Trouble concentrating on things, such as reading the newspaper or watching television</label> <br />
+            @Html.DropDownListFor(x => x.question7, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>
+                8. Moving or speaking so slowly that orther people have noticed. Or the opposite,
+                being so fidgety or restless that you have been moving around a lot more than usual</label> <br />
+            @Html.DropDownListFor(x => x.question8, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>9. Thoughts that you would be better off dead or hurting yourself in some way.</label> <br />
+            @Html.DropDownListFor(x => x.question9, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>Comments:</label> <br />
+            @Html.TextBoxFor(x => x.comments, new { @class = "form-control" })
+        </div> <br />
+        <div class="text-center">
+            <input class="btn btn-success" type="submit" value="Submit" />
+        </div>
+    }
+</body>
+</html>

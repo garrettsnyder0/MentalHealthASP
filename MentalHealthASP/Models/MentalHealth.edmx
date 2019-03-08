@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MentalHealthModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MentalHealth.dbo.AnxietyTest' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AnxietyTest">
+          <Key>
+            <PropertyRef Name="testScore" />
+            <PropertyRef Name="dateTaken" />
+          </Key>
+          <Property Name="testScore" Type="int" Nullable="false" />
+          <Property Name="dateTaken" Type="date" Nullable="false" />
+          <Property Name="comments" Type="varchar(max)" />
+          <Property Name="question1" Type="int" />
+          <Property Name="question2" Type="int" />
+          <Property Name="question3" Type="int" />
+          <Property Name="question4" Type="int" />
+          <Property Name="question5" Type="int" />
+          <Property Name="question6" Type="int" />
+          <Property Name="question7" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MentalHealth.dbo.DepressionTest' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DepressionTest">
+          <Key>
+            <PropertyRef Name="testScore" />
+            <PropertyRef Name="dateTaken" />
+          </Key>
+          <Property Name="testScore" Type="int" Nullable="false" />
+          <Property Name="dateTaken" Type="date" Nullable="false" />
+          <Property Name="comments" Type="varchar(max)" />
+          <Property Name="question1" Type="int" />
+          <Property Name="question2" Type="int" />
+          <Property Name="question3" Type="int" />
+          <Property Name="question4" Type="int" />
+          <Property Name="question5" Type="int" />
+          <Property Name="question6" Type="int" />
+          <Property Name="question7" Type="int" />
+          <Property Name="question8" Type="int" />
+          <Property Name="question9" Type="int" />
+        </EntityType>
+        <EntityContainer Name="MentalHealthModelStoreContainer">
+          <EntitySet Name="AnxietyTest" EntityType="Self.AnxietyTest" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AnxietyTest].[testScore] AS [testScore], 
+    [AnxietyTest].[dateTaken] AS [dateTaken], 
+    [AnxietyTest].[comments] AS [comments], 
+    [AnxietyTest].[question1] AS [question1], 
+    [AnxietyTest].[question2] AS [question2], 
+    [AnxietyTest].[question3] AS [question3], 
+    [AnxietyTest].[question4] AS [question4], 
+    [AnxietyTest].[question5] AS [question5], 
+    [AnxietyTest].[question6] AS [question6], 
+    [AnxietyTest].[question7] AS [question7]
+    FROM [dbo].[AnxietyTest] AS [AnxietyTest]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DepressionTest" EntityType="Self.DepressionTest" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DepressionTest].[testScore] AS [testScore], 
+    [DepressionTest].[dateTaken] AS [dateTaken], 
+    [DepressionTest].[comments] AS [comments], 
+    [DepressionTest].[question1] AS [question1], 
+    [DepressionTest].[question2] AS [question2], 
+    [DepressionTest].[question3] AS [question3], 
+    [DepressionTest].[question4] AS [question4], 
+    [DepressionTest].[question5] AS [question5], 
+    [DepressionTest].[question6] AS [question6], 
+    [DepressionTest].[question7] AS [question7], 
+    [DepressionTest].[question8] AS [question8], 
+    [DepressionTest].[question9] AS [question9]
+    FROM [dbo].[DepressionTest] AS [DepressionTest]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MentalHealthModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AnxietyTest">
+          <Key>
+            <PropertyRef Name="testScore" />
+            <PropertyRef Name="dateTaken" />
+          </Key>
+          <Property Name="testScore" Type="Int32" Nullable="false" />
+          <Property Name="dateTaken" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="question1" Type="Int32" />
+          <Property Name="question2" Type="Int32" />
+          <Property Name="question3" Type="Int32" />
+          <Property Name="question4" Type="Int32" />
+          <Property Name="question5" Type="Int32" />
+          <Property Name="question6" Type="Int32" />
+          <Property Name="question7" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DepressionTest">
+          <Key>
+            <PropertyRef Name="testScore" />
+            <PropertyRef Name="dateTaken" />
+          </Key>
+          <Property Name="testScore" Type="Int32" Nullable="false" />
+          <Property Name="dateTaken" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="question1" Type="Int32" />
+          <Property Name="question2" Type="Int32" />
+          <Property Name="question3" Type="Int32" />
+          <Property Name="question4" Type="Int32" />
+          <Property Name="question5" Type="Int32" />
+          <Property Name="question6" Type="Int32" />
+          <Property Name="question7" Type="Int32" />
+          <Property Name="question8" Type="Int32" />
+          <Property Name="question9" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="MentalHealthEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AnxietyTests" EntityType="Self.AnxietyTest" />
+          <EntitySet Name="DepressionTests" EntityType="Self.DepressionTest" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MentalHealthModelStoreContainer" CdmEntityContainer="MentalHealthEntities1">
+          <EntitySetMapping Name="AnxietyTests">
+            <EntityTypeMapping TypeName="MentalHealthModel.AnxietyTest">
+              <MappingFragment StoreEntitySet="AnxietyTest">
+                <ScalarProperty Name="testScore" ColumnName="testScore" />
+                <ScalarProperty Name="dateTaken" ColumnName="dateTaken" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="question1" ColumnName="question1" />
+                <ScalarProperty Name="question2" ColumnName="question2" />
+                <ScalarProperty Name="question3" ColumnName="question3" />
+                <ScalarProperty Name="question4" ColumnName="question4" />
+                <ScalarProperty Name="question5" ColumnName="question5" />
+                <ScalarProperty Name="question6" ColumnName="question6" />
+                <ScalarProperty Name="question7" ColumnName="question7" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepressionTests">
+            <EntityTypeMapping TypeName="MentalHealthModel.DepressionTest">
+              <MappingFragment StoreEntitySet="DepressionTest">
+                <ScalarProperty Name="testScore" ColumnName="testScore" />
+                <ScalarProperty Name="dateTaken" ColumnName="dateTaken" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="question1" ColumnName="question1" />
+                <ScalarProperty Name="question2" ColumnName="question2" />
+                <ScalarProperty Name="question3" ColumnName="question3" />
+                <ScalarProperty Name="question4" ColumnName="question4" />
+                <ScalarProperty Name="question5" ColumnName="question5" />
+                <ScalarProperty Name="question6" ColumnName="question6" />
+                <ScalarProperty Name="question7" ColumnName="question7" />
+                <ScalarProperty Name="question8" ColumnName="question8" />
+                <ScalarProperty Name="question9" ColumnName="question9" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

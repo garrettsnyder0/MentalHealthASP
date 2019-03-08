@@ -1,0 +1,103 @@
+﻿@model MentalHealthASP.Models.AnxietyTest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnxietyTest</title>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>@Html.ActionLink("Home", "Index")</th>
+            <th>@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
+            <th>@Html.ActionLink("Depression Test", "DepressionTest")</th>
+            <th>@Html.ActionLink("History", "History")</th>
+        </tr>
+    </table>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <div class="form-group">
+            <label>1. Feeling nervous, anxious, or on edge field is required.</label> <br />
+            @Html.DropDownListFor(x => x.question1, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new {@class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>2. Not being able to sleep or control worrying field is required.</label> <br />
+            @Html.DropDownListFor(x => x.question2, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>3. Worrying too much about different things field is required.</label> <br />
+            @Html.DropDownListFor(x => x.question3, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>4. Trouble relaxing field is required.</label><br />
+            @Html.DropDownListFor(x => x.question4, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div><br />
+        <div class="form-group">
+            <label>5. Being so restless that it is hard to sit still field is required.</label> <br />
+            @Html.DropDownListFor(x => x.question5, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>6. Becoming easily annoyed or irritable field is required.</label> <br />
+            @Html.DropDownListFor(x => x.question6, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>7. Feeling afraid, as if something awful might happen field is required.</label> <br />
+            @Html.DropDownListFor(x => x.question7, new List<SelectListItem>{
+                                                                new SelectListItem {Value = "0", Text = "Not at all" },
+                                                                new SelectListItem {Value = "1", Text = "Several days" },
+                                                                new SelectListItem {Value = "2", Text = "More than half the days" },
+                                                                new SelectListItem {Value = "3", Text = "Nearly everyday" }
+                                                            }, new { @class = "form-control" })
+        </div> <br />
+        <div class="form-group">
+            <label>Comments:</label> <br />
+            @Html.TextBoxFor(x => x.comments, new { @class = "form-control" })
+        </div> <br />
+        <div class="text-center">
+            <input class="btn btn-success" type="submit" value="Submit" />
+        </div>
+    }
+</body>
+</html>
