@@ -206,6 +206,8 @@
     <Content Include="Views\Home\DepressionTest.cshtml" />
     <Content Include="Views\Home\AnxietyTest.cshtml" />
     <Content Include="Views\Home\History.cshtml" />
+    <Content Include="Views\Home\AnxietyResults.cshtml" />
+    <Content Include="Views\Home\DepressionResults.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,33 @@
+﻿@model MentalHealthASP.Models.AnxietyTest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnxietyResults</title>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>@Html.ActionLink("Home", "Index")</th>
+            <th>@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
+            <th>@Html.ActionLink("Depression Test", "DepressionTest")</th>
+            <th>@Html.ActionLink("History", "History")</th>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <div>
+        Date: @Model.dateTaken <br />
+        <h1>Anxiety Test Score</h1> <br />
+        @Model.testScore <br /><br />
+        <h1>Your Comments:</h1> <br />
+        @Model.comments
+    </div>
+</body>
+</html>
