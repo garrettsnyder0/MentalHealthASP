@@ -4,11 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MentalHealthASP.Models;
+using MentalHealthASP.Abstract;
+using MentalHealthASP.Concrete;
 
 namespace MentalHealthASP.Controllers
 {
     public class HomeController : Controller
     {
+
+        private  IAnxietyRepository anxietyRepository;
+        private IDepressionRepository depressionRepository;
+
+        public HomeController(IAnxietyRepository anxietyRepository, IDepressionRepository depressionRepository)
+        {
+            this.anxietyRepository = anxietyRepository;
+            this.depressionRepository = depressionRepository;
+        }
+
         // GET: Home
         public ActionResult Index()
         {
@@ -44,12 +56,21 @@ namespace MentalHealthASP.Controllers
             anxietyTest.testScore = anxietyTest.question1 + anxietyTest.question2 + anxietyTest.question3 +
                                     anxietyTest.question4 + anxietyTest.question5 + anxietyTest.question6 + anxietyTest.question7;
             anxietyTest.dateTaken = System.DateTime.Now;
+            
+            
+
             return View("AnxietyResults", anxietyTest);
         }
 
         public ActionResult History()
         {
-            return View();
+            HistoryViewModel model = new HistoryViewModel
+            {
+                AnxietyTests = anxietyRepository.AnxietyTests,
+                DepressionTests = depressionRepository.DepressionTests,
+                
+            };
+            return View(model);
         }
     }
 }

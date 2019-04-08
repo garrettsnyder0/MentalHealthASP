@@ -1,8 +1,8 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model MentalHealthASP.Models.HistoryViewModel
 
+@{
+    ViewBag.Title = "Your History";
+}
 <!DOCTYPE html>
 
 <html>
@@ -11,14 +11,23 @@
     <title>History</title>
 </head>
 <body>
-    <table style="width:100%">
-        <tr>
-            <th>@Html.ActionLink("Home", "Index")</th>
-            <th>@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
-            <th>@Html.ActionLink("Depression Test", "DepressionTest")</th>
-            <th>@Html.ActionLink("History", "History")</th>
 
-        </tr>
-    </table>
+    <h2>Anxiety Test Scores</h2>
+    <br />
+    @foreach (var a in Model.AnxietyTests)
+    {
+        @Html.Partial("AnxietyTestSummary", a)
+        <br />
+    }
+
+    <br />  <br />
+    <h2>Depression Test Scores</h2>
+    <br />
+    @foreach (var d in Model.DepressionTests)
+    {
+        @Html.Partial("DepressionTestSummary", d)
+        <br />
+    }
+
 </body>
 </html>

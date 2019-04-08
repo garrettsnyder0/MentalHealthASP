@@ -1,0 +1,28 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/MyStyling.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <table style="width:100%" border="1">
+        <tr>
+            <th width="25%" align="center">@Html.ActionLink("Home", "Index")</th>
+            <th width="25%" align="center">@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
+            <th width="25%" align="center">@Html.ActionLink("Depression Test", "DepressionTest")</th>
+            <th width="25%" align="center">@Html.ActionLink("History", "History")</th>
+         
+        </tr>
+    </table>
+    <br /><br />
+    <div class="col-xs-8">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

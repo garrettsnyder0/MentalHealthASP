@@ -1,9 +1,8 @@
 ﻿@model MentalHealthASP.Models.AnxietyTest
 
 @{
-    Layout = null;
+    ViewBag.Title = "Your Anxiety Test Results";
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -12,22 +11,16 @@
     <title>AnxietyResults</title>
 </head>
 <body>
-    <table style="width:100%">
-        <tr>
-            <th>@Html.ActionLink("Home", "Index")</th>
-            <th>@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
-            <th>@Html.ActionLink("Depression Test", "DepressionTest")</th>
-            <th>@Html.ActionLink("History", "History")</th>
-        </tr>
-    </table>
-    <br />
-    <br />
+
     <div>
-        Date: @Model.dateTaken <br />
+        <h1>Date: @Model.dateTaken </h1><br />
         <h1>Anxiety Test Score</h1> <br />
-        @Model.testScore <br /><br />
+        <h1>
+            @Model.testScore
+        </h1>
+        <br /><br />
         <h1>Your Comments:</h1> <br />
-        @Model.comments
+        <h1>@Model.comments</h1>
     </div>
 </body>
 </html>

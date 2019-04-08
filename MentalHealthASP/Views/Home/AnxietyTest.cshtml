@@ -1,9 +1,8 @@
 ﻿@model MentalHealthASP.Models.AnxietyTest
 
 @{
-    Layout = null;
+    ViewBag.Title = "Anxiety Test";
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -12,19 +11,7 @@
     <title>AnxietyTest</title>
 </head>
 <body>
-    <table style="width:100%">
-        <tr>
-            <th>@Html.ActionLink("Home", "Index")</th>
-            <th>@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
-            <th>@Html.ActionLink("Depression Test", "DepressionTest")</th>
-            <th>@Html.ActionLink("History", "History")</th>
-        </tr>
-    </table>
 
-    <br />
-    <br />
-    <br />
-    <br />
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary()

@@ -1,7 +1,7 @@
 ﻿@model MentalHealthASP.Models.DepressionTest
 
 @{
-    Layout = null;
+    ViewBag.Title = "Depression Test";
 }
 
 <!DOCTYPE html>
@@ -12,20 +12,7 @@
     <title>DepressionTest</title>
 </head>
 <body>
-    <table style="width:100%">
-        <tr>
-            <th>@Html.ActionLink("Home", "Index")</th>
-            <th>@Html.ActionLink("Anxiety Test", "AnxietyTest")</th>
-            <th>@Html.ActionLink("Depression Test", "DepressionTest")</th>
-            <th>@Html.ActionLink("History", "History")</th>
 
-        </tr>
-    </table>
-
-    <br />
-    <br />
-    <br />
-    <br />
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary()
@@ -95,7 +82,8 @@
         <div class="form-group">
             <label>
                 8. Moving or speaking so slowly that orther people have noticed. Or the opposite,
-                being so fidgety or restless that you have been moving around a lot more than usual</label> <br />
+                being so fidgety or restless that you have been moving around a lot more than usual
+            </label> <br />
             @Html.DropDownListFor(x => x.question8, new List<SelectListItem>{
                                                                 new SelectListItem {Value = "0", Text = "Not at all" },
                                                                 new SelectListItem {Value = "1", Text = "Several days" },
