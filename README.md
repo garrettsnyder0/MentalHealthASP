@@ -1,5 +1,6 @@
 # MentalHealthASP
-App created to track trends in anxiety and depression
+App created to track trends in anxiety and depression using MVC framework
+
 User takes anxiety or depression test used by psychiatrists to get scores
 Can then add comments to add information about the day
 
