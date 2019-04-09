@@ -9,7 +9,7 @@ namespace MentalHealthASP.Concrete
 {
     public class EFAnxietyRepository : IAnxietyRepository
     {
-        private EFMentalHealthContext context = new EFMentalHealthContext();
+        public EFMentalHealthContext context = new EFMentalHealthContext();
 
         public IEnumerable<AnxietyTest> AnxietyTests
         {

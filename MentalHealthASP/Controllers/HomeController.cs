@@ -14,6 +14,8 @@ namespace MentalHealthASP.Controllers
 
         private  IAnxietyRepository anxietyRepository;
         private IDepressionRepository depressionRepository;
+        private EFMentalHealthContext db = new EFMentalHealthContext();
+
 
         public HomeController(IAnxietyRepository anxietyRepository, IDepressionRepository depressionRepository)
         {
@@ -40,6 +42,20 @@ namespace MentalHealthASP.Controllers
                                     depressionTest.question4 + depressionTest.question5 + depressionTest.question6 +
                                     depressionTest.question7 + depressionTest.question8 + depressionTest.question9;
             depressionTest.dateTaken = System.DateTime.Now;
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.DepressionTests.Add(depressionTest);
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("unable to write");
+            }
+
             return View("DepressionResults", depressionTest);
         }
 
@@ -56,8 +72,21 @@ namespace MentalHealthASP.Controllers
             anxietyTest.testScore = anxietyTest.question1 + anxietyTest.question2 + anxietyTest.question3 +
                                     anxietyTest.question4 + anxietyTest.question5 + anxietyTest.question6 + anxietyTest.question7;
             anxietyTest.dateTaken = System.DateTime.Now;
-            
-            
+
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    db.AnxietyTests.Add(anxietyTest);
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("unable to write");
+            }
+            //EFAnxietyRepository db = new EFAnxietyRepository();
+            //db.context.AnxietyTests.SqlQuery("INSERT INTO dbo.AnxietyTests (dateTaken, testScore, comments, question1, question2, question3, question4, question5, question6, question7) Values (anxietyTest.dateTaken, anxietyTest.testScore, anxietyTest.comments, anxietyTest.question1, anxietyTest.question2, anxietyTest.question3, anxietyTest.question4, anxietyTest.question5, anxietyTest.question6, anxietyTest.question7", anxietyTest);
 
             return View("AnxietyResults", anxietyTest);
         }
